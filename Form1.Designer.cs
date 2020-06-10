@@ -48,10 +48,10 @@
             // txtPlayer1
             // 
             this.txtPlayer1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPlayer1.Location = new System.Drawing.Point(59, 297);
-            this.txtPlayer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlayer1.Location = new System.Drawing.Point(79, 366);
+            this.txtPlayer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPlayer1.Name = "txtPlayer1";
-            this.txtPlayer1.Size = new System.Drawing.Size(132, 20);
+            this.txtPlayer1.Size = new System.Drawing.Size(175, 22);
             this.txtPlayer1.TabIndex = 3;
             // 
             // lblPlayer1
@@ -59,10 +59,9 @@
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPlayer1.Location = new System.Drawing.Point(42, 258);
-            this.lblPlayer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPlayer1.Location = new System.Drawing.Point(76, 318);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(149, 37);
+            this.lblPlayer1.Size = new System.Drawing.Size(186, 46);
             this.lblPlayer1.TabIndex = 4;
             this.lblPlayer1.Text = "Player 1:";
             // 
@@ -71,19 +70,18 @@
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblPlayer2.Location = new System.Drawing.Point(478, 258);
-            this.lblPlayer2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPlayer2.Location = new System.Drawing.Point(654, 318);
             this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(151, 37);
+            this.lblPlayer2.Size = new System.Drawing.Size(186, 46);
             this.lblPlayer2.TabIndex = 5;
             this.lblPlayer2.Text = "Player 2:";
             // 
             // txtPlayer2
             // 
-            this.txtPlayer2.Location = new System.Drawing.Point(493, 297);
-            this.txtPlayer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlayer2.Location = new System.Drawing.Point(657, 366);
+            this.txtPlayer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPlayer2.Name = "txtPlayer2";
-            this.txtPlayer2.Size = new System.Drawing.Size(132, 20);
+            this.txtPlayer2.Size = new System.Drawing.Size(175, 22);
             this.txtPlayer2.TabIndex = 6;
             // 
             // btnPlay
@@ -91,10 +89,10 @@
             this.btnPlay.BackColor = System.Drawing.SystemColors.Window;
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.Location = new System.Drawing.Point(276, 290);
-            this.btnPlay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlay.Location = new System.Drawing.Point(368, 357);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(141, 32);
+            this.btnPlay.Size = new System.Drawing.Size(188, 39);
             this.btnPlay.TabIndex = 9;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = false;
@@ -103,10 +101,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Connect4.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(120, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(528, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(704, 204);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -115,7 +113,7 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(130, 18);
             this.toolStripStatusLabel1.Text = "Connect4 Game";
             // 
             // toolStripStatusLabel2
@@ -123,7 +121,7 @@
             this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(198, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(233, 18);
             this.toolStripStatusLabel2.Text = "By: A.D(181100), S.K(181257)";
             // 
             // statusStrip1
@@ -133,10 +131,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 385);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 477);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(696, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(928, 24);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -146,10 +144,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(696, 407);
+            this.ClientSize = new System.Drawing.Size(928, 501);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -160,9 +158,10 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Connect4";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

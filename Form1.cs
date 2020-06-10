@@ -12,6 +12,8 @@ namespace Connect4
 {
     public partial class Form1 : Form
     {
+        public static string player1Name = "";
+        public static string player2Name = "";
         public Form1()
         {
             InitializeComponent();
@@ -40,11 +42,23 @@ namespace Connect4
                 errorProvider1.SetError(txtPlayer2, null);
             }
 
+            player1Name = txtPlayer1.Text;
+            player2Name = txtPlayer2.Text;
+            
             Connect4 newGame = new Connect4();
             newGame.Show();
+
+            txtPlayer1.Text = "";
+            txtPlayer2.Text = "";
+            
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

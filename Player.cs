@@ -11,12 +11,16 @@ namespace Connect4
     {
         public string playerName { get; set; }
         public bool turn { get; set; }
-        public Color topceBoja { get; set; }
-        public Point Location { get; set; }
         public int brojtopcinja { get; set; }
         public bool daliZavrsil { get; set; }
        
-
+        public Player(string playerName,bool turn)
+        {
+            this.playerName = playerName;
+            this.turn = turn;
+            this.brojtopcinja = 0;
+            this.daliZavrsil = false;
+        }
         public void Click(Point lokacija)
         {
 

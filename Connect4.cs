@@ -20,77 +20,118 @@ namespace Connect4
 
         private void Connect4_MouseClick(object sender, MouseEventArgs e)
         {
+
+            if(scena.player1.daliZavrsil || scena.player2.daliZavrsil)
+            {
+                if(MessageBox.Show("Дали сакате нова игра ?", "Играта заврши !", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            int kolona = -1;
+            int igrac = -1;
+
+            if (scena.player1.turn)
+            {
+                igrac = 1;
+            }else if (scena.player2.turn)
+            {
+                igrac = 2;
+            }
+
             if (e.X > 70 && e.X < 160)
             {
-                MessageBox.Show("PRVA KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 0;
+                kolona = 0;
             }  
             else if (e.X > 170 && e.X < 260)
             {
-                MessageBox.Show("VTORA KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 1;
-                //znaci pocnujme od najdolnoto topce belo, i gledame vo pozicijaNaKolonaIliJod kolonata, ako
-                // imame slobodno topce najdole go stavame odma novoto kreirano topce za toj player (ke tr da se update kaj soodvetniot PLAYER).
-                //ako ne go najdime go barame nanagore za poslobodno mesto, i ka ce najdime prazno WHITE , dodavame topce na taa pozicija vrz nego Crveno/Plavo vo zavisnost od playerot
-
-                for (int i = 5; i >= 0; i--)
-                {
-                    if (scena.topcinja[i, this.scena.clickedNewBall.pozicijaNaKolonaIliJod].boja == Color.White)
-                    {
-                        Ball b = new Ball(new Point(e.X, e.Y));
-                        b.boja = Player.topceBoja;
-                        scena.topcinja[i, this.scena.clickedNewBall.pozicijaNaKolonaIliJod] = b;
-                    }
-
-                }
+                kolona = 1;
             }
             else if (e.X > 270 && e.X < 360)
             {
-                     MessageBox.Show("Treta KOLONA");
-                    this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                    this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 2;
-                
+                kolona = 2;
             }
             else if (e.X > 370 && e.X < 460)
-            {                
-                MessageBox.Show("Cetvrta KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 3;
-            
-        }
+            {
+                kolona = 3;
+            }
             else if (e.X > 470 && e.X < 560)
             {
-                MessageBox.Show("Petta KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 4;
+                kolona = 4;
             }
 
             else if (e.X > 570 && e.X < 660)
             {
-                MessageBox.Show("Sesta KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 5;
+                kolona = 5;
             }
                
             else if (e.X > 670 && e.X < 760)
             {
-                MessageBox.Show("Sedma KOLONA");
-                this.scena.clickedNewBall = new Ball(new Point(e.X, e.X));//new
-                this.scena.clickedNewBall.pozicijaNaKolonaIliJod = 6;
+                kolona = 6;
             }
 
-            //da napravime sega //UpdateNewClickedBall() vo Scene klasata, za da go azurirame novoto topce - 
-            // ke tr da a izvrtime cela matrica so a imame u scena i spored poziciite via pozicijaNaKolonaIliJod da smestime topce
-            // da napr Invalidate
+            if(kolona == -1)
+            {
+                return;
+            }
+            int sakanoI = -1;
+            for (int i = 0; i < 6; i++)
+            {
+                if (scena.topcinja[kolona, i].active == false)
+                {
+                    sakanoI = i;
+                    break;
+                }
+            }
 
+            if (sakanoI == -1)
+            {
+                MessageBox.Show("Колоната е полна","Грешка");
+                return;
+            }
 
+            if (scena.player1.turn)
+            {
+                lblPlayer1.Visible = false;
+                lblPlayer2.Visible = true;
+            }
+            else if (scena.player2.turn)
+            {
+                lblPlayer2.Visible = false;
+                lblPlayer1.Visible = true;
+            }
 
-
+            scena.AddBall(kolona, igrac, sakanoI);
 
             Invalidate();
+
+            if (scena.CheckWin())
+            {
+                timer1.Start();
+            }
+
+            if (scena.checkDraw())
+            {
+                if (MessageBox.Show("Дали сакате нова игра ?", "Нерешено !", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                    Form1 newGame = new Form1();
+                    newGame.Show();
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
+
 
         private void Connect4_Paint(object sender, PaintEventArgs e)
         {
@@ -100,7 +141,26 @@ namespace Connect4
 
         private void Connect4_Load(object sender, EventArgs e)
         {
-            
+            lblPlayer1.Text = scena.player1.playerName;
+            lblPlayer2.Text = scena.player2.playerName;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            scena.ticks++;
+            if (scena.forPulse[0].radius >= 65)
+            {
+                scena.pulseAll(-10);
+            }
+            else
+            {
+                scena.pulseAll(10);
+            }
+
+            if (scena.ticks == 10)
+                timer1.Stop();
+
+            Invalidate();
         }
     }
 }

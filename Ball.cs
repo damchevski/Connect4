@@ -12,6 +12,7 @@ namespace Connect4
         public Color boja { get; set; }
         public bool active { get; set; }
         public Point lokacija { get; set; }
+        public int radius = 55;
         public int igrac { get; set; }
         public Ball(Point lokacija)
         {
@@ -21,13 +22,18 @@ namespace Connect4
             igrac = 0;
         }
 
+        public void Pulse(int x)
+        {
+            this.radius += x;
+        }
+
         public void Draw(Graphics g)
         {
             Brush b = new SolidBrush(boja);
             Pen p = new Pen(Color.Black, 2);
 
-            g.FillEllipse(b,lokacija.X,lokacija.Y,55,55);
-            g.DrawEllipse(p, lokacija.X, lokacija.Y, 55, 55);
+            g.FillEllipse(b,lokacija.X,lokacija.Y,radius,radius);
+            g.DrawEllipse(p, lokacija.X, lokacija.Y, radius,radius);
 
             b.Dispose();
             p.Dispose();
