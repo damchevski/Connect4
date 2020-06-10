@@ -40,7 +40,13 @@ namespace Connect4
                 errorProvider1.SetError(txtPlayer2, null);
             }
 
-            MessageBox.Show("Test");
+            Connect4 newGame = new Connect4();
+            newGame.Show();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
