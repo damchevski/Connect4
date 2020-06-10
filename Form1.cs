@@ -16,5 +16,31 @@ namespace Connect4
         {
             InitializeComponent();
         }
+
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if(txtPlayer1.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtPlayer1, "Името е задолжително !");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtPlayer1, null);
+            }
+
+            if(txtPlayer2.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtPlayer2, "Името е задолжително !");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtPlayer2, null);
+            }
+
+            MessageBox.Show("Test");
+        }
     }
 }
