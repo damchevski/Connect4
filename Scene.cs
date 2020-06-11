@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Connect4
 {
+    [Serializable]
     public class Scene
     {
         public Player player1 { get; set; }
@@ -52,10 +53,12 @@ namespace Connect4
         public void DrawPlatno(Graphics g)
         {
             Brush b = new SolidBrush(Color.DarkBlue);
-            Pen p = new Pen(b);
+            Pen p = new Pen(Color.Black,7);
             Rectangle r = new Rectangle(50, 72, 740, 405);
+         
             g.DrawRectangle(p, r);
             g.FillRectangle(b, r);
+            
             b.Dispose();
             p.Dispose();
         }
@@ -566,7 +569,7 @@ namespace Connect4
         {
             foreach(Ball b in topcinja)
             {
-                if (b.active == true)
+                if (b.active == false)
                     return false;
             }
 

@@ -29,7 +29,14 @@ namespace Connect4
             }
             else
             {
-                errorProvider1.SetError(txtPlayer1, null);
+                if (txtPlayer1.Text.Length >= 4 && txtPlayer1.Text.Length <= 10)
+                {
+                    errorProvider1.SetError(txtPlayer1, null);
+                }else
+                {
+                    errorProvider1.SetError(txtPlayer1, "Името мора да биде од 6 до 10 карактери !");
+                    return;
+                }
             }
 
             if(txtPlayer2.Text.Length == 0)
@@ -39,7 +46,15 @@ namespace Connect4
             }
             else
             {
-                errorProvider1.SetError(txtPlayer2, null);
+                if (txtPlayer2.Text.Length >= 4 && txtPlayer2.Text.Length <= 10)
+                {
+                    errorProvider1.SetError(txtPlayer2, null);
+                }
+                else
+                {
+                    errorProvider1.SetError(txtPlayer2, "Името мора да биде од 6 до 10 карактери !");
+                    return;
+                }
             }
 
             player1Name = txtPlayer1.Text;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Connect4
 {
+    [Serializable]
     public class Player
     {
         public string playerName { get; set; }

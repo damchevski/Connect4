@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Connect4
 {
+    [Serializable]
     public class Ball
     {
         public Color boja { get; set; }
